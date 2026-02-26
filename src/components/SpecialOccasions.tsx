@@ -35,14 +35,26 @@ export default function SpecialOccasions() {
   ];
 
   return (
-    <section className="relative py-12 sm:py-16 lg:py-24 overflow-hidden">
-      {/* Background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50"></div>
+    <section className="relative py-24 overflow-hidden">
+      {/* Background Layer - Calligraphy with reduced opacity */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="/assets/whitebg2.jpg"
+          alt="Background"
+          fill
+          className="object-cover opacity-10"
+          priority
+        />
+      </div>
       
       {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-islamic-yellow/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-green-700/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-islamic-yellow/5 rounded-full blur-3xl z-[1]"></div>
+      <div className="absolute bottom-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-green-700/5 rounded-full blur-3xl z-[1]"></div>
 
+      {/* Soft gradient fade at bottom for seamless transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white z-[2]"></div>
+
+      {/* Content Layer */}
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Title */}
         <div className="mb-8 sm:mb-12 lg:mb-16">

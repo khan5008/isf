@@ -102,6 +102,9 @@ export default function EventsCarousel() {
                 fill
                 className="object-cover transition-all duration-500"
               />
+              
+              {/* White Overlay */}
+              <div className="absolute inset-0 bg-white/40 z-[1]"></div>
 
               {/* Title Overlay - Always Visible */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-4 z-10">

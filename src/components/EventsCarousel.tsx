@@ -78,8 +78,22 @@ export default function EventsCarousel() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/assets/whitebg.jpg"
+          alt="Background"
+          fill
+          className="object-cover opacity-70"
+          priority
+        />
+      </div>
+
+      {/* Light Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/40 to-white/40 z-[1]"></div>
+
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="mb-8 sm:mb-10 lg:mb-12">
           <SectionHeading
             firstWord="Core Islamic"
@@ -102,9 +116,6 @@ export default function EventsCarousel() {
                 fill
                 className="object-cover transition-all duration-500"
               />
-              
-              {/* White Overlay */}
-              <div className="absolute inset-0 bg-white/40 z-[1]"></div>
 
               {/* Title Overlay - Always Visible */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-4 z-10">

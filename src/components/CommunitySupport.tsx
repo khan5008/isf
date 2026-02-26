@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import SectionHeading from './SectionHeading';
 
 export default function CommunitySupport() {
@@ -73,9 +74,23 @@ export default function CommunitySupport() {
   ];
 
   return (
-    <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 via-gray-50 to-white overflow-hidden">
+    <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/assets/whitebg4.jpg"
+          alt="Background"
+          fill
+          className="object-cover opacity-70"
+          priority
+        />
+      </div>
+
+      {/* Light Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50/40 via-gray-50/40 to-white/40 z-[1]"></div>
+
       {/* Subtle Islamic Mosque Silhouettes Background */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none z-[2]">
         <svg className="absolute left-10 top-20 w-32 h-32" viewBox="0 0 100 100" fill="currentColor">
           <path d="M50 10 L55 30 L75 30 L60 42 L65 62 L50 50 L35 62 L40 42 L25 30 L45 30 Z" />
         </svg>
@@ -85,7 +100,7 @@ export default function CommunitySupport() {
       </div>
 
       {/* Green Abstract Wave - Bottom Left */}
-      <div className="absolute bottom-0 left-0 w-96 h-96 opacity-20 pointer-events-none">
+      <div className="absolute bottom-0 left-0 w-96 h-96 opacity-20 pointer-events-none z-[2]">
         <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 300 Q100 250 200 300 T400 300 L400 400 L0 400 Z" fill="url(#greenGradient1)" />
           <defs>
@@ -98,7 +113,7 @@ export default function CommunitySupport() {
       </div>
 
       {/* Green Abstract Wave - Bottom Right */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 opacity-20 pointer-events-none">
+      <div className="absolute bottom-0 right-0 w-96 h-96 opacity-20 pointer-events-none z-[2]">
         <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M400 320 Q300 280 200 320 T0 320 L0 400 L400 400 Z" fill="url(#greenGradient2)" />
           <defs>

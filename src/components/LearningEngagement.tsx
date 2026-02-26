@@ -128,25 +128,32 @@ export default function LearningEngagement() {
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center max-w-7xl mx-auto">
           {/* Left Side - Category Buttons */}
-          <div className="lg:col-span-3 space-y-3 order-2 lg:order-1">
+          <div className="lg:col-span-3 space-y-2 sm:space-y-3 order-2 lg:order-1">
             {categories.map((category, index) => (
-              <div key={index} className="flex items-center gap-3 sm:gap-4">
+              <div key={index} className="flex items-center gap-2 sm:gap-3">
                 <button
                   onClick={() => setActiveCategory(index)}
-                  className={`flex-1 text-right px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full font-semibold text-xs sm:text-sm lg:text-base transition-all duration-500 shadow-md ${
+                  className={`flex-1 text-left sm:text-right px-3 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-xs sm:text-sm transition-all duration-500 shadow-md border-2 ${
                     activeCategory === index
-                      ? 'bg-gradient-to-r from-green-700 to-green-600 text-white shadow-xl scale-105'
-                      : 'bg-white text-gray-700 hover:bg-gray-50 hover:shadow-lg border border-gray-200'
+                      ? index % 2 === 0
+                        ? 'bg-gradient-to-r from-islamic-yellow to-islamic-gold text-gray-900 border-islamic-yellow shadow-xl scale-105'
+                        : 'bg-gradient-to-r from-green-600 to-green-700 text-white border-green-600 shadow-xl scale-105'
+                      : 'bg-white text-gray-700 hover:bg-gray-50 hover:shadow-lg border-gray-200'
                   }`}
                 >
-                  {category.name}
+                  <div className="flex items-center justify-between sm:justify-end gap-2">
+                    <span className="sm:hidden text-base">{category.icon}</span>
+                    <span>{category.name}</span>
+                  </div>
                 </button>
                 <div
                   onClick={() => setActiveCategory(index)}
-                  className={`w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full flex items-center justify-center text-2xl sm:text-3xl lg:text-4xl transition-all duration-500 shadow-lg flex-shrink-0 cursor-pointer ${
+                  className={`hidden sm:flex w-14 h-14 sm:w-16 sm:h-16 rounded-full items-center justify-center text-2xl sm:text-3xl transition-all duration-500 shadow-lg flex-shrink-0 cursor-pointer border-2 ${
                     activeCategory === index
-                      ? 'bg-gradient-to-br from-islamic-yellow to-islamic-gold shadow-xl scale-110 rotate-12'
-                      : 'bg-gradient-to-br from-gray-100 to-gray-200 hover:scale-105'
+                      ? index % 2 === 0
+                        ? 'bg-gradient-to-br from-islamic-yellow to-islamic-gold border-islamic-yellow shadow-xl scale-110'
+                        : 'bg-gradient-to-br from-green-600 to-green-700 border-green-600 shadow-xl scale-110'
+                      : 'bg-gradient-to-br from-gray-100 to-gray-200 border-gray-300 hover:scale-105'
                   }`}
                 >
                   {category.icon}

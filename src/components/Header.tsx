@@ -22,7 +22,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
-        isScrolled ? 'backdrop-blur bg-black/75 shadow-xl py-1' : 'bg-transparent py-3'
+        isScrolled ? 'backdrop-blur bg-black/75 shadow-xl py-1' : 'bg-transparent py-2'
       }`}
     >
       {/* Background image */}
@@ -42,7 +42,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-8">
         <div
           className={`flex items-center justify-between transition-all duration-500 ${
-            isScrolled ? 'h-14' : 'h-16 sm:h-20'
+            isScrolled ? 'h-12' : 'h-14 sm:h-16'
           }`}
         >
           <div className="flex items-center">

@@ -1,81 +1,161 @@
 'use client';
 
+import SectionHeading from './SectionHeading';
+
 export default function CommunitySupport() {
   const supportCards = [
     {
       icon: '❓',
       title: 'Frequently Asked Questions',
-      subtitle: 'by Non-Muslims',
-      description: 'Find answers to common questions about Islam from those seeking to learn more',
+      subtitle: '',
+      description: 'Get answers to common questions about Islam from those seeking to learn more',
+      buttonText: 'Explore FAQ',
+      borderColor: 'border-t-islamic-yellow',
+      iconBg: 'bg-gradient-to-br from-islamic-yellow to-islamic-gold',
+      buttonBg: 'bg-islamic-yellow/10 hover:bg-islamic-yellow/20 text-gray-900',
+      iconShadow: 'shadow-lg shadow-islamic-yellow/30',
     },
     {
       icon: '🤝',
-      title: 'Content for New Muslims',
+      title: 'New Muslim Resources',
       subtitle: 'Guidance & Support',
-      description: 'Essential resources and support for those new to Islam on their journey',
+      description: 'Essential tools and resources for new Muslims on their spiritual journey',
+      buttonText: 'Get Started',
+      borderColor: 'border-t-green-600',
+      iconBg: 'bg-gradient-to-br from-green-600 to-green-700',
+      buttonBg: 'bg-green-50 hover:bg-green-100 text-green-700',
+      iconShadow: 'shadow-lg shadow-green-200/50',
     },
     {
       icon: '📄',
       title: 'Research Articles',
       subtitle: 'Islamic Studies',
       description: 'In-depth articles and research on various aspects of Islamic knowledge',
+      buttonText: 'Read Articles',
+      borderColor: 'border-t-islamic-yellow',
+      iconBg: 'bg-gradient-to-br from-islamic-yellow to-islamic-gold',
+      buttonBg: 'bg-islamic-yellow/10 hover:bg-islamic-yellow/20 text-gray-900',
+      iconShadow: 'shadow-lg shadow-islamic-yellow/30',
     },
     {
       icon: '🧸',
       title: 'Kids\' Corner',
       subtitle: 'Fun & Learning',
       description: 'Interactive Islamic education and activities designed for children',
+      buttonText: 'Discover',
+      borderColor: 'border-t-green-600',
+      iconBg: 'bg-gradient-to-br from-green-600 to-green-700',
+      buttonBg: 'bg-green-50 hover:bg-green-100 text-green-700',
+      iconShadow: 'shadow-lg shadow-green-200/50',
     },
     {
       icon: '👥',
       title: 'Youth Issues',
       subtitle: 'Guidance & Mentorship',
-      description: 'Addressing challenges faced by Muslim youth in today\'s world',
+      description: 'Support and guidance for challenges faced by Muslim youth in today\'s world',
+      buttonText: 'Learn More',
+      borderColor: 'border-t-islamic-yellow',
+      iconBg: 'bg-gradient-to-br from-islamic-yellow to-islamic-gold',
+      buttonBg: 'bg-islamic-yellow/10 hover:bg-islamic-yellow/20 text-gray-900',
+      iconShadow: 'shadow-lg shadow-islamic-yellow/30',
     },
     {
       icon: '🌙',
-      title: 'Women\'s Issues',
+      title: 'Women\'s Section',
       subtitle: 'Support & Empowerment',
       description: 'Resources and support for Muslim women on various life matters',
+      buttonText: 'Explore',
+      borderColor: 'border-t-green-600',
+      iconBg: 'bg-gradient-to-br from-green-600 to-green-700',
+      buttonBg: 'bg-green-50 hover:bg-green-100 text-green-700',
+      iconShadow: 'shadow-lg shadow-green-200/50',
     },
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="relative py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 via-gray-50 to-white overflow-hidden">
+      {/* Subtle Islamic Mosque Silhouettes Background */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <svg className="absolute left-10 top-20 w-32 h-32" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M50 10 L55 30 L75 30 L60 42 L65 62 L50 50 L35 62 L40 42 L25 30 L45 30 Z" />
+        </svg>
+        <svg className="absolute right-20 bottom-32 w-40 h-40" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M50 10 L55 30 L75 30 L60 42 L65 62 L50 50 L35 62 L40 42 L25 30 L45 30 Z" />
+        </svg>
+      </div>
+
+      {/* Green Abstract Wave - Bottom Left */}
+      <div className="absolute bottom-0 left-0 w-96 h-96 opacity-20 pointer-events-none">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 300 Q100 250 200 300 T400 300 L400 400 L0 400 Z" fill="url(#greenGradient1)" />
+          <defs>
+            <linearGradient id="greenGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#059669" stopOpacity="0.1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      {/* Green Abstract Wave - Bottom Right */}
+      <div className="absolute bottom-0 right-0 w-96 h-96 opacity-20 pointer-events-none">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M400 320 Q300 280 200 320 T0 320 L0 400 L400 400 Z" fill="url(#greenGradient2)" />
+          <defs>
+            <linearGradient id="greenGradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#059669" stopOpacity="0.1" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         {/* Section Title */}
-        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Community Support & <span className="text-green-700">Education</span>
-          </h2>
-          <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
-            Comprehensive resources and support for every member of our community
-          </p>
+        <div className="mb-12 sm:mb-16">
+          <SectionHeading
+            firstWord="Community Support &"
+            highlightedWord="Education"
+            subtitle="Comprehensive Resources & Support for Every Member of Our Community"
+          />
         </div>
 
-        {/* Cards Grid - 3 per row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
+        {/* Cards Grid - 3x2 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {supportCards.map((card, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-2xl shadow-lg overflow-hidden cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border-2 border-gray-200"
+              className={`relative bg-white rounded-3xl shadow-lg hover:shadow-2xl overflow-visible cursor-pointer transition-all duration-300 hover:-translate-y-2 border-t-[3px] ${card.borderColor} h-[280px] sm:h-[300px] lg:h-[320px] flex flex-col pt-8`}
             >
-              {/* Card Content */}
-              <div className="relative z-10 p-5 sm:p-6 lg:p-8">
-                <div className="text-4xl sm:text-5xl lg:text-6xl mb-3 sm:mb-4">{card.icon}</div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 group-hover:text-white transition-colors duration-500">
-                  {card.title}
-                </h3>
-                <p className="text-green-700 text-xs sm:text-sm font-semibold mb-3 sm:mb-4 group-hover:text-white transition-colors duration-500">
-                  {card.subtitle}
-                </p>
-                <p className="text-gray-600 text-sm leading-relaxed group-hover:text-white transition-colors duration-500">
-                  {card.description}
-                </p>
+              {/* Floating Icon Badge - Fully Rounded on All Sides */}
+              <div className="absolute -top-7 left-1/2 -translate-x-1/2 z-10">
+                <div className={`${card.iconBg} ${card.iconShadow} w-14 h-14 rounded-2xl flex items-center justify-center text-2xl transform hover:scale-110 hover:rotate-6 transition-all duration-300`}>
+                  {card.icon}
+                </div>
               </div>
 
-              {/* Yellow overlay - animates from bottom to top on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-islamic-yellow via-islamic-gold to-islamic-yellow translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out"></div>
+              {/* Card Content */}
+              <div className="flex-1 px-5 sm:px-6 pb-6 flex flex-col justify-center text-center">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 leading-tight tracking-tight">
+                  {card.title}
+                </h3>
+                {card.subtitle && (
+                  <p className="text-xs sm:text-sm font-semibold text-green-600 mb-3 tracking-wide">
+                    {card.subtitle}
+                  </p>
+                )}
+                <p className="text-sm text-gray-600 leading-relaxed mb-6 font-normal">
+                  {card.description}
+                </p>
+                
+                {/* CTA Button - Professional Styling */}
+                <button className={`${card.buttonBg} font-semibold px-6 py-3 rounded-full transition-all duration-300 text-sm flex items-center justify-center gap-2 group shadow-sm hover:shadow-md tracking-wide`}>
+                  <span>{card.buttonText}</span>
+                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </button>
+              </div>
             </div>
           ))}
         </div>

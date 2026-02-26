@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import SectionHeading from './SectionHeading';
 
 export default function SpecialOccasions() {
   const occasions = [
@@ -11,6 +12,7 @@ export default function SpecialOccasions() {
       description: 'Experience the spiritual journey of fasting, prayer, and reflection during the holiest month',
       features: ['Daily Iftar', 'Taraweeh Prayers', 'Quran Recitation'],
       color: 'from-purple-600 to-purple-800',
+      image: '/assets/ramdan.jpg',
     },
     {
       icon: '🕌',
@@ -19,6 +21,7 @@ export default function SpecialOccasions() {
       description: 'Join our community for Eid al-Fitr and Eid al-Adha prayers and celebrations',
       features: ['Special Prayers', 'Community Feast', 'Kids Activities'],
       color: 'from-green-600 to-green-800',
+      image: '/assets/Eid.jpg',
     },
     {
       icon: '📿',
@@ -27,6 +30,7 @@ export default function SpecialOccasions() {
       description: 'Learn about and practice voluntary fasts throughout the year for spiritual rewards',
       features: ['Monday & Thursday', 'White Days', 'Day of Arafah'],
       color: 'from-blue-600 to-blue-800',
+      image: '/assets/fasting.jpg',
     },
   ];
 
@@ -41,16 +45,15 @@ export default function SpecialOccasions() {
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Title */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <p className="text-green-700 text-xs sm:text-sm uppercase tracking-widest font-semibold mb-2 sm:mb-3">
+        <div className="mb-8 sm:mb-12 lg:mb-16">
+          <p className="text-green-700 text-xs sm:text-sm uppercase tracking-widest font-semibold mb-4 text-center">
             ISLAMIC CALENDAR
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Special <span className="text-green-700">Occasions</span>
-          </h2>
-          <p className="text-gray-600 text-sm sm:text-base lg:text-lg max-w-2xl mx-auto px-4">
-            Celebrate and observe important Islamic events with our community
-          </p>
+          <SectionHeading
+            firstWord="Special"
+            highlightedWord="Occasions"
+            subtitle="Celebrate and observe important Islamic events with our community"
+          />
         </div>
 
         {/* Cards Grid */}
@@ -60,26 +63,30 @@ export default function SpecialOccasions() {
               key={index}
               className="group relative bg-white rounded-3xl shadow-lg overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border-2 border-gray-100"
             >
-              {/* White Header */}
-              <div className="relative bg-white p-5 sm:p-6 lg:p-8 pb-12 sm:pb-14 lg:pb-16 border-b-4 border-islamic-yellow">
-                <div className="text-5xl sm:text-6xl lg:text-7xl mb-3 sm:mb-4 filter drop-shadow-lg">{occasion.icon}</div>
-                <h3 className="text-2xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
-                  {occasion.title}
-                </h3>
-                <p className="text-gray-700 text-xs sm:text-sm font-medium uppercase tracking-wide">
-                  {occasion.subtitle}
-                </p>
+              {/* Background Image Header */}
+              <div className="relative h-48 sm:h-56 overflow-hidden">
+                <Image
+                  src={occasion.image}
+                  alt={occasion.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
                 
-                {/* Decorative wave */}
-                <div className="absolute bottom-0 left-0 right-0">
-                  <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-6 sm:h-8">
-                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="white"></path>
-                  </svg>
+                {/* Title on Image */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                    {occasion.title}
+                  </h3>
+                  <p className="text-white/90 text-xs sm:text-sm font-medium uppercase tracking-wide">
+                    {occasion.subtitle}
+                  </p>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-5 sm:p-6 lg:p-8 pt-3 sm:pt-4">
+              <div className="p-5 sm:p-6 lg:p-8">
                 <p className="text-gray-600 text-sm leading-relaxed mb-4 sm:mb-6">
                   {occasion.description}
                 </p>
@@ -88,7 +95,7 @@ export default function SpecialOccasions() {
                 <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                   {occasion.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-2 sm:gap-3">
-                      <div className="w-2 h-2 bg-islamic-yellow rounded-full flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-green-600 rounded-full flex-shrink-0"></div>
                       <span className="text-gray-700 text-xs sm:text-sm font-medium">{feature}</span>
                     </div>
                   ))}
@@ -101,7 +108,7 @@ export default function SpecialOccasions() {
               </div>
 
               {/* Hover effect border */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-islamic-yellow rounded-3xl transition-all duration-500 pointer-events-none"></div>
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-green-600 rounded-3xl transition-all duration-500 pointer-events-none"></div>
             </div>
           ))}
         </div>

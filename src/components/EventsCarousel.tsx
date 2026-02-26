@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import SectionHeading from './SectionHeading';
 
 export default function EventsCarousel() {
   const events = [
@@ -79,13 +80,12 @@ export default function EventsCarousel() {
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-            <span className="text-green-700">Core Islamic Teachings</span>
-          </h2>
-          <p className="text-gray-600 text-sm sm:text-base lg:text-lg">
-            Learn the fundamentals of Islam through our comprehensive programs
-          </p>
+        <div className="mb-8 sm:mb-10 lg:mb-12">
+          <SectionHeading
+            firstWord="Core Islamic"
+            highlightedWord="Teachings"
+            subtitle="Learn the fundamentals of Islam through our comprehensive programs"
+          />
         </div>
 
         {/* 3x2 Grid Layout */}
@@ -102,16 +102,6 @@ export default function EventsCarousel() {
                 fill
                 className="object-cover transition-all duration-500"
               />
-              
-              {/* Countdown Badge */}
-              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-amber-100 rounded-lg p-1.5 sm:p-2 text-center shadow-md z-10">
-                <div className="text-lg sm:text-xl font-bold text-gray-800">{event.days}</div>
-                <div className="text-[9px] sm:text-[10px] text-gray-600 mb-0.5">Days</div>
-                <div className="text-sm sm:text-base font-semibold text-gray-800">{event.hours}</div>
-                <div className="text-[9px] sm:text-[10px] text-gray-600 mb-0.5">Hours</div>
-                <div className="text-sm sm:text-base font-semibold text-gray-800">{event.mins}</div>
-                <div className="text-[9px] sm:text-[10px] text-gray-600">Min</div>
-              </div>
 
               {/* Title Overlay - Always Visible */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-4 z-10">

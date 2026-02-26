@@ -1,22 +1,20 @@
 'use client';
 
 import Image from 'next/image';
+import SectionHeading from './SectionHeading';
 
 export default function CommunityStats() {
   return (
     <section className="relative min-h-screen flex items-center py-12 sm:py-14 lg:py-20 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4 sm:px-6 md:px-12">
-        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-          <p className="text-gray-600 uppercase tracking-wide text-xs sm:text-sm mb-2 sm:mb-3 lg:mb-4">
+        <div className="mb-8 sm:mb-10 lg:mb-12">
+          <p className="text-gray-600 uppercase tracking-wide text-xs sm:text-sm mb-4 text-center">
             WE'D LOVE FOR YOU TO BE A PART OF OUR COMMUNITY
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4 px-4">
-            Aims to bring people together to provide
-          </h2>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold px-4">
-            services and projects inspired by{' '}
-            <span className="text-green-700">faith to local communities</span>
-          </h2>
+          <SectionHeading
+            firstWord="Aims to bring people together to provide services and projects inspired by"
+            highlightedWord="faith to local communities"
+          />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 xl:gap-12 items-center mt-8 sm:mt-10 lg:mt-14 xl:mt-16">

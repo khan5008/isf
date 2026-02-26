@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        serif: ['var(--font-playfair)', 'Playfair Display', 'Georgia', 'serif'],
+      },
       colors: {
         islamic: {
           brown: '#5C4033',

@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="mb-4">
               <Image
-                src="/assets/logo.webp"
+                src="/assets/ISFM-dark-logo.webp"
                 alt="Islamic Society Logo"
                 width={150}
                 height={60}

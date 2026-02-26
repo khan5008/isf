@@ -89,11 +89,11 @@ export default function EventsCarousel() {
         </div>
 
         {/* 3x2 Grid Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-7xl mx-auto">
           {events.slice(0, 6).map((event, index) => (
             <div
               key={index}
-              className="group relative w-full h-[380px] sm:h-[420px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl cursor-pointer transition-all duration-500 hover:shadow-2xl animate-fade-in"
+              className="group relative w-full h-[280px] sm:h-[300px] lg:h-[320px] rounded-xl overflow-hidden shadow-lg cursor-pointer transition-all duration-500 hover:shadow-2xl animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <Image
@@ -104,28 +104,28 @@ export default function EventsCarousel() {
               />
               
               {/* Countdown Badge */}
-              <div className="absolute top-3 right-3 sm:top-4 sm:right-4 lg:top-6 lg:right-6 bg-amber-100 rounded-lg p-2 sm:p-3 lg:p-4 text-center shadow-lg z-10">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800">{event.days}</div>
-                <div className="text-[10px] sm:text-xs text-gray-600 mb-1 sm:mb-2">Days</div>
-                <div className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800">{event.hours}</div>
-                <div className="text-[10px] sm:text-xs text-gray-600 mb-1 sm:mb-2">Hours</div>
-                <div className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800">{event.mins}</div>
-                <div className="text-[10px] sm:text-xs text-gray-600">Min</div>
+              <div className="absolute top-2 right-2 sm:top-3 sm:right-3 bg-amber-100 rounded-lg p-1.5 sm:p-2 text-center shadow-md z-10">
+                <div className="text-lg sm:text-xl font-bold text-gray-800">{event.days}</div>
+                <div className="text-[9px] sm:text-[10px] text-gray-600 mb-0.5">Days</div>
+                <div className="text-sm sm:text-base font-semibold text-gray-800">{event.hours}</div>
+                <div className="text-[9px] sm:text-[10px] text-gray-600 mb-0.5">Hours</div>
+                <div className="text-sm sm:text-base font-semibold text-gray-800">{event.mins}</div>
+                <div className="text-[9px] sm:text-[10px] text-gray-600">Min</div>
               </div>
 
               {/* Title Overlay - Always Visible */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 sm:p-6 lg:p-8 z-10">
-                <p className="text-islamic-yellow text-xs sm:text-sm mb-1 font-medium">{event.subtitle}</p>
-                <h3 className="text-white text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold">{event.title}</h3>
-                <p className="text-white/80 text-xs sm:text-sm mt-1 sm:mt-2">{event.date}</p>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 sm:p-4 z-10">
+                <p className="text-islamic-yellow text-[10px] sm:text-xs mb-0.5 font-medium">{event.subtitle}</p>
+                <h3 className="text-white text-base sm:text-lg lg:text-xl font-bold line-clamp-2">{event.title}</h3>
+                <p className="text-white/80 text-[10px] sm:text-xs mt-0.5 sm:mt-1">{event.date}</p>
               </div>
 
               {/* Hover Content Overlay - Green animated from bottom */}
-              <div className="absolute inset-0 bg-gradient-to-t from-green-700/70 via-green-600/60 to-green-800/50 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out flex flex-col justify-center items-center p-4 sm:p-6 lg:p-10 z-20">
-                <h3 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-center transform translate-y-8 group-hover:translate-y-0 transition-transform duration-700 delay-100">{event.title}</h3>
-                <div className="w-16 sm:w-20 h-1 bg-islamic-yellow mb-4 sm:mb-6 transform scale-0 group-hover:scale-100 transition-transform duration-500 delay-200"></div>
-                <p className="text-white text-center text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-700 delay-300">{event.description}</p>
-                <button className="bg-islamic-yellow hover:bg-islamic-gold text-black font-semibold px-5 sm:px-7 lg:px-8 py-2 sm:py-3 rounded-lg transition-all transform translate-y-8 group-hover:translate-y-0 duration-700 delay-400 hover:scale-105 text-sm sm:text-base">
+              <div className="absolute inset-0 bg-gradient-to-t from-green-700/70 via-green-600/60 to-green-800/50 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out flex flex-col justify-center items-center p-4 sm:p-5 lg:p-6 z-20">
+                <h3 className="text-white text-lg sm:text-xl lg:text-2xl font-bold mb-2 sm:mb-3 text-center transform translate-y-8 group-hover:translate-y-0 transition-transform duration-700 delay-100">{event.title}</h3>
+                <div className="w-12 sm:w-16 h-0.5 bg-islamic-yellow mb-3 sm:mb-4 transform scale-0 group-hover:scale-100 transition-transform duration-500 delay-200"></div>
+                <p className="text-white text-center text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5 line-clamp-3 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-700 delay-300">{event.description}</p>
+                <button className="bg-islamic-yellow hover:bg-islamic-gold text-black font-semibold px-4 sm:px-6 py-1.5 sm:py-2 rounded-lg transition-all transform translate-y-8 group-hover:translate-y-0 duration-700 delay-400 hover:scale-105 text-xs sm:text-sm">
                   Learn More
                 </button>
               </div>

@@ -77,8 +77,23 @@ export default function EventsCarousel() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="relative py-24 overflow-hidden">
+      {/* Background Layer - Calligraphy with reduced opacity */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Image
+          src="/assets/whitebg.jpg"
+          alt="Background"
+          fill
+          className="object-cover opacity-10"
+          priority
+        />
+      </div>
+
+      {/* Soft gradient fade at bottom for seamless transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white z-[1]"></div>
+
+      {/* Content Layer */}
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2">
             <span className="text-green-700">Core Islamic Teachings</span>

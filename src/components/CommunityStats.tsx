@@ -4,8 +4,28 @@ import Image from 'next/image';
 
 export default function CommunityStats() {
   return (
-    <section className="relative min-h-screen flex items-center py-12 sm:py-14 lg:py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 md:px-12">
+    <section className="relative min-h-screen flex items-center py-24 overflow-hidden">
+      {/* Background Layer - Calligraphy with reduced opacity */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <div 
+          className="absolute inset-0 w-full h-full opacity-[0.08]"
+          style={{
+            backgroundImage: 'url(/assets/whitebg.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+      </div>
+
+      {/* Soft gradient fade at top for seamless transition from previous section */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-transparent z-[1]"></div>
+
+      {/* Soft gradient fade at bottom for seamless transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white z-[1]"></div>
+
+      {/* Content Layer */}
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <p className="text-gray-600 uppercase tracking-wide text-xs sm:text-sm mb-2 sm:mb-3 lg:mb-4">
             WE'D LOVE FOR YOU TO BE A PART OF OUR COMMUNITY

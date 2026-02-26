@@ -41,8 +41,28 @@ export default function CommunitySupport() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6">
+    <section className="relative py-24 overflow-hidden">
+      {/* Background Layer - Calligraphy with reduced opacity */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <div 
+          className="absolute inset-0 w-full h-full opacity-[0.08]"
+          style={{
+            backgroundImage: 'url(/assets/whitebg.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+      </div>
+
+      {/* Soft gradient fade at top for seamless transition from previous section */}
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-transparent z-[1]"></div>
+
+      {/* Soft gradient fade at bottom for seamless transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-white z-[1]"></div>
+
+      {/* Content Layer */}
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Title */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4">
